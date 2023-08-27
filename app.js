@@ -21,7 +21,7 @@ github.getUser(userText)
   } else {
     // Show profile
     ui.showProfile(data.profile);
-    console.log(data.profile)
+    ui.showRepos(data.repos);
   }
 })
 } else {
