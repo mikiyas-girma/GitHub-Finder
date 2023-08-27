@@ -1,5 +1,7 @@
-// init
+// init Github
 const github = new Github;
+//initialiaze UI
+const ui = new UI;
 
 // get elements 
 
@@ -14,15 +16,17 @@ github.getUser(userText)
 .then(data => {
   if(data.profile.message === 'Not Found') {
     // Show alert
+    ui.showAlert('user not found!', 'alert alert-danger');
 
   } else {
     // Show profile
-    console.log(data.profile.company)
+    ui.showProfile(data.profile);
+    console.log(data.profile)
   }
 })
 } else {
 // Clear profile
-
+  ui.clearProfile();
 }
 
 });
