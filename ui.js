@@ -32,16 +32,24 @@ class UI {
   }
 
   showAlert(message, className) {
+    // clear existing alert if any
+    this.clearAlert();
     const div = document.createElement('div');
     div.className = className;
     div.innerText = message;
-    const parent = document.querySelector('.searchContainer');
-    parent.insertBefore(div, )
-
+    const container = document.querySelector('.searchContainer');
+    const search = document.querySelector('.search');
+    container.insertBefore(div, search );
+    setTimeout(() => {
+      this.clearAlert();
+    }, 2500);
   }
 
   clearAlert() {
-
+   const currentAlert = document.querySelector('.alert');
+   if(currentAlert) {
+      currentAlert.remove();
+   }
   }
 
   clearProfile() {
